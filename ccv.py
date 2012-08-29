@@ -4,7 +4,7 @@ from ctypes import *
 def _get_system_extension():
     extensions = {
         "Windows": "dll",
-        "Linux": "so",
+        "Linux": "so.0",
         "Darwin": "dylib",
     }
     import platform
