@@ -1350,9 +1350,6 @@ log2f.argtypes = [c_float]
 log2l = _libraries['libccv'].log2l
 log2l.restype = c_longdouble
 log2l.argtypes = [c_longdouble]
-__log2 = _libraries['libccv'].__log2
-__log2.restype = c_double
-__log2.argtypes = [c_double]
 log2 = _libraries['libccv'].log2
 log2.restype = c_double
 log2.argtypes = [c_double]
@@ -1464,9 +1461,6 @@ nan.argtypes = [STRING]
 nanl = _libraries['libccv'].nanl
 nanl.restype = c_longdouble
 nanl.argtypes = [STRING]
-__nan = _libraries['libccv'].__nan
-__nan.restype = c_double
-__nan.argtypes = [STRING]
 __isnanf = _libraries['libccv'].__isnanf
 __isnanf.restype = c_int
 __isnanf.argtypes = [c_float]
@@ -2457,9 +2451,6 @@ valloc.argtypes = [size_t]
 abort = _libraries['libccv'].abort
 abort.restype = None
 abort.argtypes = []
-atexit = _libraries['libccv'].atexit
-atexit.restype = c_int
-atexit.argtypes = [CFUNCTYPE(None)]
 exit = _libraries['libccv'].exit
 exit.restype = None
 exit.argtypes = [c_int]
@@ -2553,9 +2544,6 @@ wcstombs.argtypes = [STRING, WSTRING, size_t]
 getsubopt = _libraries['libccv'].getsubopt
 getsubopt.restype = c_int
 getsubopt.argtypes = [POINTER(STRING), POINTER(STRING), POINTER(STRING)]
-setkey = _libraries['libccv'].setkey
-setkey.restype = None
-setkey.argtypes = [STRING]
 posix_openpt = _libraries['libccv'].posix_openpt
 posix_openpt.restype = c_int
 posix_openpt.argtypes = [c_int]
@@ -3036,9 +3024,6 @@ setdomainname.argtypes = [STRING, size_t]
 revoke = _libraries['libccv'].revoke
 revoke.restype = c_int
 revoke.argtypes = [STRING]
-#profil = _libraries['libccv'].profil
-#profil.restype = c_int
-#profil.argtypes = [POINTER(c_ushort), size_t, size_t, c_uint]
 acct = _libraries['libccv'].acct
 acct.restype = c_int
 acct.argtypes = [STRING]
@@ -3096,12 +3081,6 @@ lockf.argtypes = [c_int, c_int, __off_t]
 fdatasync = _libraries['libccv'].fdatasync
 fdatasync.restype = c_int
 fdatasync.argtypes = [c_int]
-crypt = _libraries['libccv'].crypt
-crypt.restype = STRING
-crypt.argtypes = [STRING, STRING]
-encrypt = _libraries['libccv'].encrypt
-encrypt.restype = None
-encrypt.argtypes = [STRING, c_int]
 swab = _libraries['libccv'].swab
 swab.restype = None
 swab.argtypes = [c_void_p, c_void_p, ssize_t]
@@ -3152,9 +3131,9 @@ __all__ = ['ccv_dpm_param_t', '__uint16_t', '_SC_SYSTEM_DATABASE',
            'cosh', '_CS_POSIX_V6_ILP32_OFF32_LINTFLAGS',
            '_SC_PII_INTERNET_STREAM', 'strcasestr', 'acosf',
            '_POSIX_', 'u_int32_t', '_SC_THREADS', 'strsep',
-           'ccv_bbf_param_t', '__nan', 'asin',
+           'ccv_bbf_param_t', 'asin',
            '_CS_POSIX_V7_ILP32_OFFBIG_LDFLAGS', 'ccv_shift',
-           '_SC_INT_MIN', 'atexit', '_SC_UINT_MAX', '_SC_PASS_MAX',
+           '_SC_INT_MIN', '_SC_UINT_MAX', '_SC_PASS_MAX',
            'erf', 'nanf', 'access', '_SC_XOPEN_XCU_VERSION',
            '_SC_SS_REPL_MAX', 'abs', '_PC_SOCK_MAXBUF', 'id_t',
            '_SC_THREAD_KEYS_MAX', 'CCV_DPM_NO_NESTED', 'ualarm',
@@ -3355,7 +3334,7 @@ __all__ = ['ccv_dpm_param_t', '__uint16_t', '_SC_SYSTEM_DATABASE',
            '_CS_POSIX_V6_ILP32_OFF32_LIBS', 'close', 'lgammaf_r',
            '__sigset_t', 'isnan', '_SC_SYNCHRONIZED_IO',
            'ccv_dense_vector_t', 'fgetpos', 'funlockfile', 'erand48',
-           'encrypt', 'erfcf', 'posix_memalign',
+           'erfcf', 'posix_memalign',
            '_CS_POSIX_V6_LP64_OFF64_LDFLAGS', 'lgammal_r', 'erfcl',
            'ldiv_t', 'vdprintf', 'FP_INFINITE', 'strtold_l',
            'ccv_cache_index_t', 'scalbln', 'lrintl', 'CCV_L1_NORM',
@@ -3435,7 +3414,7 @@ __all__ = ['ccv_dpm_param_t', '__uint16_t', '_SC_SYSTEM_DATABASE',
            '__io_close_fn', 'ccv_hog', 'tanhf', '__off_t',
            'ccv_root_comp_t', 'getdelim', 'intmax_t',
            'CCV_PADDING_EXTEND', '__codecvt_ok', 'fgets', 'swab',
-           '_SC_THREAD_SPORADIC_SERVER', '_SC_BASE', 'crypt',
+           '_SC_THREAD_SPORADIC_SERVER', '_SC_BASE',
            'ctermid', '__id_t', 'cookie_io_functions_t', 'llrintf',
            'exp2f', '_SC_LINE_MAX', 'gid_t', 'int_least8_t',
            'putchar', 'socklen_t', 'exp2l', 'fsetpos', '__signbitf',
